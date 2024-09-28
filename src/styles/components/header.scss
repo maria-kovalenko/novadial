@@ -4,7 +4,7 @@
   padding: 24px 0;
   margin-bottom: 134px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     padding: 16px 0 16px 0;
     margin-bottom: 34px;
     z-index: 10;
@@ -12,12 +12,12 @@
   }
 
   &.open {
-    background-color: #00616B;
+    background-color: $bg-green-color;
   }
 }
 
 .header__logo {
-  @media (max-width: 768px) {
+  @media (max-width: $small-tablet-width) {
     width: 133px;
   }
 }
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     align-items: flex-start;
   }
 }
@@ -34,7 +34,7 @@
 .burger-menu {
   display: none;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -45,8 +45,8 @@
   }
 
   span {
-    @media (max-width: 1024px) {
-      background: #ffffff;
+    @media (max-width: $big-tablet-width) {
+    background: $white-color;
     height: 2px;
     width: 16px;
     margin-bottom: 4px;
@@ -58,49 +58,49 @@
   };
 
   &.active span:nth-child(1)  {
-    @media (max-width: 1024px) {
+    @media (max-width: $big-tablet-width) {
       transform: rotate(45deg) translate(4px, 4px);
     }
   }
 
   &.active span:nth-child(2)  {
-    @media (max-width: 1024px) {
+    @media (max-width: $big-tablet-width) {
       opacity: 0;
     }
   }
 
   &.active span:nth-child(3)  {
-    @media (max-width: 1024px) {
+    @media (max-width: $big-tablet-width) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
   }
 
-  &.active ~ .menu__list {
-    @media (max-width: 1024px) {
+  &.active ~ .menu {
+    @media (max-width: $big-tablet-width) {
       line-height: 2.8;
       padding: 7px 47px 6px;
       align-items: center;
     }
-    @media (max-width: 768px) {
+    @media (max-width: $small-tablet-width) {
       padding: 7px 21px 6px;
       align-items: flex-start;
     }
   }
 }
 
-.menu__list {
+.menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     display: flex;
     position: absolute;
     flex-direction: column;
     align-items: flex-start;
     right: 0;
     top: 56px;
-    background-color: #00616B;
+    background-color: $bg-green-color;
     border-radius: 0 0 20px 20px;
     overflow: hidden;
     line-height: 0;
@@ -109,12 +109,12 @@
 }
 
 .menu__item {
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     overflow: hidden;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $big-tablet-width) {
   .menu__item {
     margin-right: 45px;
     font-size: 16px;

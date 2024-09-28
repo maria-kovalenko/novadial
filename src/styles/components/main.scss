@@ -5,11 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 
 $bg-main: #2c8488;
-$link-color: #fff;
+$white-color: #fff;
+$bg-green-color: #00616B;
 $link-animation: #dfe0e2;
 
 $mobile-width: 375px;
-$desktop-width: 1440px;
+$big-tablet-width: 1024px;
+$small-tablet-width: 767px;
+$desktop-width: 1439px;
 
 body {
   position: relative;
@@ -24,7 +27,7 @@ body {
   transition: all 0.05s;
   overflow: hidden;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     overflow: visible;
     font-size: 16px;
 
@@ -55,9 +58,19 @@ body {
   z-index: -1;
 
   @media (max-width: 1500px) {
-    background-position: -1050px -1612px;
+    background-position: -980px -1612px;
+
   }
-  @media (max-width: 1024px) {
+
+  @media (max-width: $big-tablet-width) {
+    background: url('../assets/images/preview-bg-mob.webp') no-repeat -217px -276px;
+    background-attachment: scroll;
+  }
+  @media (max-width: 841px) {
+    background: url('../assets/images/preview-bg-mob.webp') no-repeat -217px -196px;
+    background-attachment: scroll;
+  }
+  @media (max-width: $small-tablet-width) {
     background: url('../assets/images/preview-bg-mob.webp') no-repeat -217px -163px;
     background-attachment: scroll;
   }
@@ -77,12 +90,12 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: $link-color;
+  color: $white-color;
   transition: color 0.3s;
 
   &:focus,
-  &:hover,
-  &:active {
+  &:hover
+  {
     color: $link-animation;
   }
 }

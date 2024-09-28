@@ -1,15 +1,35 @@
 .team {
   padding-bottom: 140px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $big-tablet-width) {
     padding-bottom: 56px;
   }
 }
 
-.team-swiper.swiper {
+.team__title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 42px;
+  line-height: 40px;
+
+  span {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: $small-tablet-width) {
+    font-size: 16px;
+    margin-bottom: 11px;
+  }
+}
+
+.team__swiper.swiper {
   width: 100%;
   max-width: 1440px;
   min-height: 500px;
+
+  @media (max-width: $small-tablet-width) {
+    min-height: 370px;
+  }
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -30,64 +50,50 @@
   .swiper-button-next:after,
   .swiper-button-prev:after {
     font-size: 14px;
-    color: #fff;
-  }
-}
-
-.team__title {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 42px;
-  line-height: 40px;
-
-  span {
-    text-transform: uppercase;
+    color: $white-color;
   }
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    margin-bottom: 11px;
-  }
-}
+  .pagination {
+    position: absolute;
+    top: 28px;
+    right: 50px;
 
-.pagination {
-  position: absolute;
-  top: 28px;
-  right: 50px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-.swiper-slide {
-  &--mob {
-    display: none;
-
-    @media (max-width: 768px) {
-      display: block;
+    @media (max-width: $small-tablet-width) {
+      display: none;
     }
   }
-}
 
-.swiper-slide-img {
-  @media (max-width: 768px) {
-    width: 100%;
+  .swiper-slide {
+    &--mob {
+      display: none;
+
+      @media (max-width: $small-tablet-width) {
+        display: block;
+      }
+    }
+  }
+
+  .swiper-slide-img {
+    @media (max-width: $small-tablet-width) {
+      width: 100%;
+    }
+  }
+
+  .swiper-slide-name {
+    font-size: 18px;
+    margin: 12px 0 8px;
+
+    @media (max-width: $small-tablet-width) {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 5px 0 4px;
+    }
+  }
+
+  .swiper-slide-post {
+    font-size: 14px;
+    font-weight: 300;
   }
 }
 
-.swiper-slide-name {
-  font-size: 18px;
-  margin: 12px 0 8px;
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 5px 0 4px;
-  }
-}
-
-.swiper-slide-post {
-  font-size: 14px;
-  font-weight: 300;
-}

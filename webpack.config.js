@@ -18,10 +18,7 @@ const optimization = () => {
   };
 
   if (isProduction) {
-    config.minimizer = [
-      new CssMinimizerPlugin(),
-      new TerserWebpackPlugin(),
-    ];
+    config.minimizer = [new CssMinimizerPlugin(), new TerserWebpackPlugin()];
   }
 
   return config;
@@ -64,8 +61,8 @@ const plugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/favicon.ico'),
-          to: path.resolve(__dirname, 'dist'),
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, 'dist/images'),
         },
       ],
     }),
@@ -88,6 +85,7 @@ module.exports = {
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.png', '.svg'],
@@ -120,10 +118,13 @@ module.exports = {
       {
         test: /\.(png|jpg|svg|gif)$/,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
         generator: {
-          filename: 'src/images/[name][ext]', // Путь для сохранения изображений
+          filename: path.join('icons', '[name].[contenthash][ext]'),
         },
-
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
