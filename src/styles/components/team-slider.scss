@@ -1,6 +1,11 @@
 .team {
   padding-bottom: 140px;
+
+@media (max-width: 1024px) {
+  padding-bottom: 56px;
 }
+}
+
 
 .team-swiper.swiper {
   width: 100%;
