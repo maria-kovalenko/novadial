@@ -1,0 +1,77 @@
+.team {
+  padding-bottom: 140px;
+}
+
+.team-swiper.swiper {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 500px;
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #fff;
+  }
+  .swiper-button-next {
+    right: -50px;
+  }
+  .swiper-button-prev {
+    left: -38px;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 14px;
+    color: #fff;
+  }
+}
+
+.team__title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 42px;
+  line-height: 40px;
+  span {
+    text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 11px;
+  }
+}
+.pagination {
+  position: absolute;
+  top: 28px;
+  right: 50px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.swiper-slide {
+  &--mob {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+.swiper-slide-img {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.swiper-slide-name {
+  font-size: 18px;
+  margin: 12px 0 8px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 5px 0 4px;
+  }
+}
+.swiper-slide-post {
+  font-size: 14px;
+  font-weight: 300;
+}
