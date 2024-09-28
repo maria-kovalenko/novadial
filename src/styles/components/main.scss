@@ -23,6 +23,7 @@ body {
   background-color: $bg-main !important;
   transition: all 0.05s;
   overflow: hidden;
+
   @media (max-width: 1024px) {
     overflow: visible;
     font-size: 16px;
@@ -30,6 +31,7 @@ body {
     &.open {
       overflow: hidden;
     }
+
     &.open::after {
       position: absolute;
       content: '';
@@ -48,7 +50,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: url('../assets/images/preview-bg.png') no-repeat -800px -1599px
+  background: url('../assets/images/preview-bg.webp') no-repeat -800px -1599px
     fixed;
   z-index: -1;
 
@@ -56,10 +58,11 @@ body {
     background-position: -1050px -1612px;
   }
   @media (max-width: 1024px) {
-    background: url('../assets/images/preview-bg-mob.png') no-repeat -217px -163px
-      fixed;
+    background: url('../assets/images/preview-bg-mob.webp') no-repeat -217px -163px;
+    background-attachment: scroll;
   }
 }
+
 img {
   max-width: 100%;
   height: auto;
