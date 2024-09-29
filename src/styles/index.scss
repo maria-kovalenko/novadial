@@ -1,4 +1,4 @@
-@import 'components/main';
+@import 'components/base';
 @import 'components/header';
 @import 'components/team-slider';
 
@@ -22,6 +22,16 @@
   }
   @media (max-width: $small-tablet-width) {
     padding-top: 96px;
+  }
+
+  &.team {
+    padding-top: 273px;
+    @media (max-width: $big-tablet-width) {
+      padding-top: 160px;
+    }
+    @media (max-width: $small-tablet-width) {
+      padding-top: 80px;
+    }
   }
 }
 
