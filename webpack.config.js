@@ -64,6 +64,10 @@ const plugins = () => {
           from: path.resolve(__dirname, 'src/assets/images'),
           to: path.resolve(__dirname, 'dist/images'),
         },
+        {
+          from: path.resolve(__dirname, 'src/styles'),
+          to: path.resolve(__dirname, 'dist/styles'),
+        },
       ],
     }),
     new MiniCssExtractPlugin(),
@@ -80,7 +84,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: ['@babel/polyfill', './index.js'],
+    main: ['@babel/polyfill', './js/index.js'],
   },
   output: {
     filename: filename('js'),
@@ -99,7 +103,7 @@ module.exports = {
     port: 3000,
     hot: isDevelopment,
   },
-  devtool: 'hidden-source-map',
+  // devtool: 'hidden-source-map',
   plugins: plugins(),
   module: {
     rules: [
@@ -112,7 +116,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
