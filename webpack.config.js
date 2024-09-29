@@ -62,7 +62,7 @@ const plugins = () => {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/assets/images'),
-          to: path.resolve(__dirname, 'dist/images'),
+          to: path.resolve(__dirname, 'docs/images'),
         },
       ],
     }),
@@ -88,7 +88,7 @@ module.exports = {
   },
   output: {
     filename: filename('js'),
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
   },
   resolve: {
