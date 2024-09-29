@@ -3,6 +3,7 @@
   width: 100%;
   padding: 24px 0;
   margin-bottom: 134px;
+  transition: all 1s;
 
   @media (max-width: $big-tablet-width) {
     padding: 16px 0 16px 0;
@@ -46,30 +47,30 @@
 
   span {
     @media (max-width: $big-tablet-width) {
-    background: $white-color;
-    height: 2px;
-    width: 16px;
-    margin-bottom: 4px;
-    transition: all 0.3s;
-    &:last-child {
-      margin-bottom: 0;
+      background: $white-color;
+      height: 2px;
+      width: 16px;
+      margin-bottom: 4px;
+      transition: all 0.3s;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-    }
-  };
+  }
 
-  &.active span:nth-child(1)  {
+  &.active span:nth-child(1) {
     @media (max-width: $big-tablet-width) {
       transform: rotate(45deg) translate(4px, 4px);
     }
   }
 
-  &.active span:nth-child(2)  {
+  &.active span:nth-child(2) {
     @media (max-width: $big-tablet-width) {
       opacity: 0;
     }
   }
 
-  &.active span:nth-child(3)  {
+  &.active span:nth-child(3) {
     @media (max-width: $big-tablet-width) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
@@ -86,31 +87,42 @@
       align-items: flex-start;
     }
   }
+  &.active ~ .menu .menu__link {
+    color: $white-color;
+  }
 }
 
 .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   @media (max-width: $big-tablet-width) {
     display: flex;
     position: absolute;
     flex-direction: column;
     align-items: flex-start;
     right: 0;
-    top: 56px;
+    top: 88px;
     background-color: $bg-green-color;
     border-radius: 0 0 20px 20px;
     overflow: hidden;
     line-height: 0;
     transition: all 0.5s;
   }
+
+  @media (max-width: $small-tablet-width) {
+    top: 60px;
+  }
 }
 
 .menu__item {
   @media (max-width: $big-tablet-width) {
     overflow: hidden;
+  }
+}
+.menu__link {
+  @media (max-width: $big-tablet-width) {
+    color: transparent;
   }
 }
 

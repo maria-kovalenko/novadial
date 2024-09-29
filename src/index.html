@@ -26,20 +26,20 @@
               width="289"
             />
           </div>
-          <div class="burger-menu">
+          <button class="burger-menu" aria-expanded="false" aria-controls="list">
             <span></span>
             <span></span>
             <span></span>
-          </div>
-          <ul class="header__menu menu">
+          </button>
+          <ul class="header__menu menu" id="list" aria-hidden="true">
             <li class="menu__item">
-              <a href="#" class="menu__link"> О Компании</a>
+              <a href="#" class="menu__link" tabindex="-1"> О Компании</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Продукция</a>
+              <a href="#" class="menu__link" tabindex="-1">Продукция</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link"> Контакты</a>
+              <a href="#" class="menu__link" tabindex="-1"> Контакты</a>
             </li>
           </ul>
         </div>

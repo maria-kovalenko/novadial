@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
-
 $bg-main: #2c8488;
 $white-color: #fff;
-$bg-green-color: #00616B;
+$bg-green-color: #00616b;
 $link-animation: #dfe0e2;
 
 $mobile-width: 375px;
@@ -59,7 +59,6 @@ body {
 
   @media (max-width: 1500px) {
     background-position: -980px -1612px;
-
   }
 
   @media (max-width: $big-tablet-width) {
@@ -67,12 +66,10 @@ body {
     background-attachment: scroll;
   }
   @media (max-width: 841px) {
-    background: url('../assets/images/preview-bg-mob.webp') no-repeat -217px -196px;
-    background-attachment: scroll;
+    background-position: -217px -196px;
   }
   @media (max-width: $small-tablet-width) {
-    background: url('../assets/images/preview-bg-mob.webp') no-repeat -217px -163px;
-    background-attachment: scroll;
+    background-position: -217px -163px;
   }
 }
 
@@ -94,8 +91,7 @@ a {
   transition: color 0.3s;
 
   &:focus,
-  &:hover
-  {
+  &:hover {
     color: $link-animation;
   }
 }
@@ -108,4 +104,9 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
 }

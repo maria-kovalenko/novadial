@@ -64,13 +64,13 @@ const plugins = () => {
           from: path.resolve(__dirname, 'src/assets/images'),
           to: path.resolve(__dirname, 'dist/images'),
         },
-        {
-          from: path.resolve(__dirname, 'src/styles'),
-          to: path.resolve(__dirname, 'dist/styles'),
-        },
       ],
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(
+      {
+        filename: "css/[name].css",
+      }
+    ),
   ];
 
   if (isProduction) {
@@ -116,8 +116,23 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
