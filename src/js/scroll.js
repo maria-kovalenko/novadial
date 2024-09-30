@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const scrolled = window.pageYOffset;
       const num = -1612;
       document.querySelector('.body-bg').style.backgroundPositionY =
-        num - -(scrolled / 24) + 'px';
+        num - -(scrolled / 24 + 17) + 'px';
     }
   });
 })
